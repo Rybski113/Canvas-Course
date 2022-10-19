@@ -35,10 +35,8 @@ canvas.addEventListener('mousemove', function(event) {
 
 class Particle {
     constructor(){
-       this.x = mouse.x;
-       this.y = mouse.y;
-        //this.x = Math.random() * canvas.width;
-        //this.y = Math.random() * canvas.height;
+        this.x = mouse.x;
+        this.y = mouse.y;
         this.size = Math.random() * 15 + 1;
         this.speedX = Math.random() * 3 - 1.5;
         this.speedY = Math.random() * 3 - 1.5;
@@ -69,6 +67,7 @@ function handleParticles() {
           if (distance < 100) {
             ctx.beginPath();
             ctx.strokeStyle = particlesArray[i].color;
+            ctx.lineWidth = particlesArray[i].size/20;
             ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
             ctx.lineTo(particlesArray[j].x, particlesArray[j].y);
             ctx.stroke();
