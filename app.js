@@ -18,12 +18,16 @@ const mouse = {
 canvas.addEventListener('click', function(event) {
     mouse.x = event.x;
     mouse.y = event.y;
-    particlesArray.push(new Particle())
+    
+    
 })
 
 canvas.addEventListener('mousemove', function(event) {
     mouse.x = event.x;
     mouse.y = event.y;
+    for (let i = 0; i < 10; i ++) {
+        particlesArray.push(new Particle())
+    }
 })
 
 class Particle {
@@ -42,7 +46,7 @@ class Particle {
         if (this.size > 0.2) this.size -= 0.1;
     }
     draw() {
-        ctx.fillStyle = 'blue';
+        ctx.fillStyle = 'white';
         ctx.beginPath();
         ctx.arc(this.x, this.y , this.size, 0, Math.PI * 2);
         ctx.fill()
