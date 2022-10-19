@@ -10,11 +10,29 @@ window.addEventListener('resize', function() {
    
 });
 
-ctx.fillStyle = 'green';
-ctx.strokeStyle = 'red';
-ctx.lineWidth = 5;
-ctx.beginPath();
-ctx.arc(100, 100, 50,0 , Math.PI * 2);
-ctx.fill()
-ctx.stroke();
+const mouse = {
+    x: undefined,
+    y: undefined,
+}
+
+canvas.addEventListener('click', function(event) {
+    mouse.x = event.x;
+    mouse.y = event.y;
+    drawCircle();
+})
+
+canvas.addEventListener('mousemove', function(event) {
+    mouse.x = event.x;
+    mouse.y = event.y;
+    drawCircle();
+})
+
+function drawCircle() {
+    ctx.fillStyle = 'green';
+    ctx.beginPath();
+    ctx.arc(mouse.x, mouse.y, 50,0 , Math.PI * 2);
+    ctx.fill()
+}
+
+
 
