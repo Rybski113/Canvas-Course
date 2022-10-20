@@ -16,4 +16,5 @@ Mouse trail effects with event listeners
 ---
 Rainbow effects on canvas, dynamic colours
 ---
-Constellations effect explained
+Constellations effects
+---
